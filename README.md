@@ -5,8 +5,8 @@
 ## Kim's Kubernetes Journey
 
 ### Your Social
-- [✍️ Kim on Twitter](https://twitter.com/kimschles)
-- [✍️ Kim on LinkedIn](https://www.linkedin.com/in/kimschlesinger/)
+- [Kim on Twitter](https://twitter.com/kimschles)
+- [Kim on LinkedIn](https://www.linkedin.com/in/kimschlesinger/)
 
 ## Stepping out the door
 
