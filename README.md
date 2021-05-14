@@ -2,11 +2,11 @@
 ![Kubernetes](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kubernetes_logo.svg/798px-Kubernetes_logo.svg.png)
 
 
-## [✍️ Your Name]'s Kubernetes Journey
+## Kim's Kubernetes Journey
 
 ### Your Social
-- [✍️ Link to your Twitter](https://twitter.com/username)
-- [✍️ Link to your LinkedIn](https://www.linkedin.com/in/username)
+- [✍️ Kim on Twitter](https://twitter.com/kimschles)
+- [✍️ Kim on LinkedIn](https://www.linkedin.com/in/kimschlesinger/)
 
 ## Stepping out the door
 
