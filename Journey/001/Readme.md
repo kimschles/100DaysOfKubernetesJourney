@@ -24,7 +24,7 @@ During the last few years, I've had a lot of hands-on production experience with
     * Deployments
     * CronJobs 
     * Daemonsets
-* Debugging issues in pods through logs 
+* Debugging cluster issues through logs 
 
 ### 🪜 K8s Concepts I'm Familiar With, But Want To Learn More Deeply  
 * The different kinds of K8s services 
@@ -33,12 +33,12 @@ During the last few years, I've had a lot of hands-on production experience with
 * Helm 
 * CNI and cluster networking 
 
-## 🐣 K8s Concepts I Don't Know (Yet)
+## 🐣 K8s Concepts I Don't Know 
 * cloud-controller-manager 
 * Security 
 * Logging with opensource tools 
 * Monitoring with opensource tools 
-* go-kubernetes sdk 
+* [client-go](https://github.com/kubernetes/client-go)
 
 ## Resources I'll Be Using 
 * [Kubernetes Docs](https://kubernetes.io/)
@@ -49,3 +49,4 @@ During the last few years, I've had a lot of hands-on production experience with
 * [KubeCon Talks](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
 * [Udemy's Certified Kubernetes Administrator (CKA) with Practice Tests](https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/)
 
+Special thanks to [Anais Urlichs](https://github.com/AnaisUrlichs) and [Rishab Kumar](https://github.com/rishabkumar7) for putting together 100DaysOfKubernetes!
