@@ -43,7 +43,6 @@ During the last few years, I've had a lot of hands-on production experience with
 ## Resources I'll Be Using 
 * [Kubernetes Docs](https://kubernetes.io/)
 * [100 Days of Kubernetes](https://100daysofkubernetes.io/overview.html)
-* https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
 * [Digital Ocean- Kubernetes Resources](https://www.digitalocean.com/community/tags/kubernetes)
 * [Certified Kubernetes Application Developer (CKAD) Prep Course](https://github.com/bmuschko/ckad-prep) 
 * [KubeCon Talks](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
