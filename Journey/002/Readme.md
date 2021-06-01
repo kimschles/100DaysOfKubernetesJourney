@@ -1,7 +1,7 @@
 # it's HTTP! 
 
 ## Introduction 
-When I started thinking about what to write about in this entry, I knew I wanted to explore about how the Kubernetes CLI tool, `kubectl`, interacts with the kube-apiserver. 
+When I started thinking about what to write about in this entry, I knew I wanted to explore about how the Kubernetes CLI tool, `kubectl`, interacts with the kube-apiserver. 🪜 K8s Concepts I'm Familiar With, But Want To Learn More Deeply
 
 <picture>
 
@@ -10,7 +10,7 @@ What I learned through my research is that the kube-apiserver exposes the Kubern
 ## Seeing the API Endpoints 
 Every object controlled by Kubernetes has an API endpoint that you or an automated system can interact with through  HTTP Methods. The most common HTTP methods are `GET`, `POST`, `PUT` and `DELETE`. 
 
-To see the API paths available in your cluster, run the command. `kubectl get --raw /`. You'll see a longer version of this json object:  
+To see the API paths available in your cluster, run the command. `kubectl get --raw /`. If you've got [jq](https://stedolan.github.io/jq/) installed, make it pretty with `kubectl get --raw / | jq .` Either way, you'll see a longer version of this json object:  
 
 ```json 
 {
@@ -55,6 +55,7 @@ To see the API paths available in your cluster, run the command. `kubectl get --
   ]
 }
 ```
+
 The `--raw` flag allows you to look at the response from the Kubernetes API as JSON instead of the formatted tables that we're used to seeing with `kubectl`. 
 
 If you'd prefer to see these resources and their API version organized in columns, run the command `kubectl api-resources`. You will see a longer version of this table: 
@@ -78,46 +79,34 @@ resourcequotas                    quota        v1                               
 secrets                                        v1                                     true         Secret
 ``` 
 
-## Translating `kubectl` to an HTTP Request
+## Translating `kubectl` command to HTTP Requests
+I'm not sure of the details, but it looks like without the user seeing it, `kubectl` sends the HTTP request as JSON. 
+If you need a to learn or review how HTTP requests are formatted, I recommend [Anatomy of an HTTP Request](https://betterprogramming.pub/the-anatomy-of-an-http-request-728a469ecba9) by Patrick Devine. 
+
+Here's a table showing a few `kubectl` commands and how they map to HTTP methods and the Kubernetes API paths. 
+
+
 
 | `kubectl` command  | HTTP Method  | API path   |
 |--------------------|--------------|------------|
-| `kubectl get pods -A`   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| `kubectl get pods -n kube-system`   | `GET` |   |   |   |
+| `kubectl create -f deployment.yaml`  | `POST`  |   |   |   |
+| `kubectl apply -f deployment.yaml`  | `PUT`  |   |   |   |
+| `kubectl apply -f deployment.yaml`  | `PUT`  |   |   |   |
 
 
 
 
-
-
-
-
-Kubernetes Resource Objects 
-
-
-
-
-
-
-! 
-
-The kube-apiserver exposes a REST API that can exchange information with `kubectl`, `kubeadm`, or with raw http requests. 
 
 ## HTTP Clients 
 
+The kube-apiserver exposes a REST API that can exchange information with `kubectl`, `kubeadm`, or with raw http requests. 
 
 
 
 
-The http requests are sent as json  
+## A few unfinished thoughts 
 
-How does authn and authz work? 
-
-
-https://kubernetes.io/docs/concepts/security/controlling-access/
-
-RESTful API calls 
 
 The kube-apiserver is the only kubernetes component that can communicate with etcd. 
 
@@ -135,9 +124,6 @@ Is that the http header?
 - [K8s Docs: HTTP Proxy Access](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)
 - [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/)
 - [Kubernetes v1.21 API Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/)
-- [Anatomy of an HTTP Request
-](https://betterprogramming.pub/the-anatomy-of-an-http-request-728a469ecba9)
-
 
 
 
