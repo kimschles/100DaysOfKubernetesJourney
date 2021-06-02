@@ -8,7 +8,7 @@ What I learned through my research is that the kube-apiserver exposes the Kubern
 I learned _so much_ from GoLinuxCloud's article called [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/). If you want a detailed description of the kube-apiserver and Kubernetes API, I highly recommend it.  
 
 ## Prerequisites
-In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser in the [KataCoda Kubernetes Playground].(https://www.katacoda.com/courses/kubernetes/playground). If you use the KataCoda playground, run your commands in the terminal for the control plane. 
+In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser in the [KataCoda Kubernetes Playground](https://www.katacoda.com/courses/kubernetes/playground). If you use the KataCoda playground, run your commands in the terminal for the control plane. 
 
 
 ## Seeing the API Endpoints 
