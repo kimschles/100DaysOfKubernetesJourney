@@ -96,7 +96,7 @@ resourcequotas                    quota        v1                               
 secrets                                        v1                                     true         Secret
 ``` 
 
-## Translating `kubectl` command to HTTP Requests
+## Translating `kubectl` commands to HTTP Requests
 When you run a `kubectl` command, `kubectl` sends an HTTP request as a string of JSON. 
 
 If you need to review (or learn for the first time!) how HTTP requests are formatted, I recommend [Anatomy of an HTTP Request](https://betterprogramming.pub/the-anatomy-of-an-http-request-728a469ecba9) by Patrick Devine. 
@@ -117,7 +117,7 @@ The most common HTTP clients we use to communicate with the Kubernetes api are `
 
 
 ## An Unfinished Thought
-- The kube-apiserver is the only kubernetes component that can communicate with etcd. All of the data the Kubernetes API shows and updates comes from etcd. 
+The kube-apiserver is the only kubernetes component that can communicate with etcd. All of the data the Kubernetes API shows and updates comes from etcd. 
 
 ## Conclusion 
 Kubernetes can be an intimidating system to start learning, especially if you're a web app developer who is new to the devops side of the tech industry. Exploring the Kubernetes API through the different endpoints might be a good place to start exploring. Good luck!  
