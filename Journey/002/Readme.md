@@ -62,7 +62,7 @@ To see the API paths available in your cluster, run the command. `kubectl get --
 
 The `--raw` flag allows you to look at the response from the Kubernetes API as JSON instead of the formatted tables that we're used to seeing with `kubectl`. 
 
-If you'd like to see the the supported API versions in your cluster, run the command `kubectl api-versions`. Each line shows you the api group, the a forward slash`/`, then the API version. You'll see a longer version of this list: 
+If you'd like to see the the supported API versions in your cluster, run the command `kubectl api-versions`. Each line shows you the api group, then a forward slash`/`, then the API version. For example: `apps/v1`. With that command, you'll see a longer version of this list: 
 
 ``` 
 admissionregistration.k8s.io/v1
