@@ -7,6 +7,10 @@ What I learned through my research is that the kube-apiserver exposes the Kubern
 
 I learned _so much_ from GoLinuxCloud's article called [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/). If you want a detailed description of the kube-apiserver and Kubernetes API, I highly recommend it.  
 
+## Prerequisites
+In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser in the [KataCoda Kubernetes Playground].(https://www.katacoda.com/courses/kubernetes/playground). If you use the KataCoda playground, run your commands in the terminal for the control plane. 
+
+
 ## Seeing the API Endpoints 
 Every object controlled by Kubernetes has an API endpoint that you or an automated system can interact with through HTTP Methods. The most common HTTP methods are `GET`, `POST`, `PUT` and `DELETE`. 
 
@@ -112,7 +116,7 @@ Here's a table showing a few `kubectl` commands and how they map to HTTP methods
 The most common HTTP clients we use to communicate with the Kubernetes api are `kubectl` and `kubeadm`. You can also setup an HTTP proxy so you can make requests to the Kubernetes API using `cURL`, `wget` or your browser. You run the command `kubectl proxy --port=4000` (or whatever port your want) and start exploring! You can find more detailed instructions [K8s Docs: HTTP Proxy Access](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)
 
 
-## An unfinished thought
+## An Unfinished Thought
 - The kube-apiserver is the only kubernetes component that can communicate with etcd. All of the data the Kubernetes API shows and updates comes from etcd. 
 
 ## Conclusion 
@@ -123,6 +127,3 @@ Kubernetes can be an intimidating system to start learning, especially if you're
 - [K8s Docs: kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
 - [K8s Docs: HTTP Proxy Access](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)
 - [Kubernetes v1.21 API Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/)
-
-
-
