@@ -1,20 +1,20 @@
 # it's HTTP! 
 
 ## Introduction 
-When I started thinking about what to write about in this entry, I knew I wanted to explore about how the Kubernetes CLI tool, `kubectl`, interacts with the kube-apiserver. This was a 🪜 K8s concept I was familiar with, but wanted to learn more deeply. 
+When I started thinking about what to write about in this entry, I knew I wanted to explore how the Kubernetes CLI tool, `kubectl`, interacts with the kube-apiserver. This was a 🪜: a K8s concept I was familiar with, but wanted to learn more deeply. 
 
 What I learned through my research is that the kube-apiserver exposes the Kuberntes API, which is a REST interface, and `kubectl` is an HTTP client like `cURL` or a browser like Firefox. I'd never put it together that `kubectl` sends HTTP requests to the Kubernetes API. 
 
 I learned _so much_ from GoLinuxCloud's article called [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/). If you want a detailed description of the kube-apiserver and Kubernetes API, I highly recommend it.  
 
 ## Prerequisites
-In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser in the [KataCoda Kubernetes Playground](https://www.katacoda.com/courses/kubernetes/playground). If you use the KataCoda playground, run your commands in the terminal for the control plane. 
+In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser in the [KataCoda Kubernetes Playground](https://www.katacoda.com/courses/kubernetes/playground). Click on the 'Start Scenario' button and then click on `launch.sh` to run the script that will prepare your cluster. If you use the KataCoda playground, run your commands in the terminal for the control plane. 
 
 
 ## Seeing the API Endpoints 
 Every object controlled by Kubernetes has an API endpoint that you or an automated system can interact with through HTTP Methods. The most common HTTP methods are `GET`, `POST`, `PUT` and `DELETE`. 
 
-To see the API paths available in your cluster, run the command. `kubectl get --raw /`. If you've got [jq](https://stedolan.github.io/jq/) installed, make it pretty with `kubectl get --raw / | jq .` Either way, you'll see a longer version of this json object:  
+To see the API paths available in your cluster, run the command. `kubectl get --raw /`. If you've got [jq](https://stedolan.github.io/jq/) installed, make it pretty with `kubectl get --raw / | jq .` Either way, you'll see a longer version of this JSON object:  
 
 ```json 
 {
@@ -62,7 +62,7 @@ To see the API paths available in your cluster, run the command. `kubectl get --
 
 The `--raw` flag allows you to look at the response from the Kubernetes API as JSON instead of the formatted tables that we're used to seeing with `kubectl`. 
 
-If you'd like to see the the supported API versions in your cluster, run the command `kubectl api-versions`. Each line shows you the api group, then a forward slash`/`, then the API version. For example: `apps/v1`. With that command, you'll see a longer version of this list: 
+If you'd like to see the the supported API versions in your cluster, run the command `kubectl api-versions`. Each line shows you the api group, then a forward slash `/`, then the API version. For example: `apps/v1`. With that command, you'll see a longer version of this list: 
 
 ``` 
 admissionregistration.k8s.io/v1
@@ -97,7 +97,7 @@ secrets                                        v1                               
 ``` 
 
 ## Translating `kubectl` commands to HTTP Requests
-When you run a `kubectl` command, `kubectl` sends an HTTP request as a string of JSON. 
+When you run a `kubectl` command, `kubectl` sends an HTTP request as a string of JSON to the Kubernetes API.  
 
 If you need to review (or learn for the first time!) how HTTP requests are formatted, I recommend [Anatomy of an HTTP Request](https://betterprogramming.pub/the-anatomy-of-an-http-request-728a469ecba9) by Patrick Devine. 
 
@@ -116,11 +116,12 @@ Here's a table showing a few `kubectl` commands and how they map to HTTP methods
 The most common HTTP clients we use to communicate with the Kubernetes api are `kubectl` and `kubeadm`. You can also setup an HTTP proxy so you can make requests to the Kubernetes API using `cURL`, `wget` or your browser. You run the command `kubectl proxy --port=4000` (or whatever port your want) and start exploring! You can find more detailed instructions [K8s Docs: HTTP Proxy Access](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)
 
 
-## An Unfinished Thought
-The kube-apiserver is the only kubernetes component that can communicate with etcd. All of the data the Kubernetes API shows and updates comes from etcd. 
+## An Couple of Unfinished Thoughts
+- The kube-apiserver is the only kubernetes component that can communicate with etcd. All of the data the Kubernetes API shows and updates comes from etcd. 
+- Authz and authn happen for every request 
 
 ## Conclusion 
-Kubernetes can be an intimidating system to start learning, especially if you're a web app developer who is new to the devops side of the tech industry. Exploring the Kubernetes API through the different endpoints might be a good place to start exploring. Good luck!  
+Kubernetes can be an intimidating system to start learning, especially if you're a web app developer who is new to the devops side of the tech industry. Exploring the Kubernetes API through the different endpoints might be a good place to start. Good luck!  
 
 ### Recommended Resources 
 - [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/)
