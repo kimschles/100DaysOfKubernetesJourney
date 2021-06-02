@@ -28,7 +28,7 @@ During the last few years, I've had a lot of hands-on production experience with
 
 ### 🪜 K8s Concepts I'm Familiar With, But Want To Learn More Deeply  
 * The different kinds of K8s services 
-* lables vs. annotations 
+* labels vs. annotations 
 * in-cluster Storage: PVs and PVCs 
 * Helm 
 * CNI and cluster networking 
