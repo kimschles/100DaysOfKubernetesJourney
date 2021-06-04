@@ -45,6 +45,6 @@ serviceaccounts                   sa           v1                               
 services                          svc          v1                                     true         Service
 ```
 
-The second column from the right shows resources that have shortnames, so instead of typing `k get namespaces` you could type `k get ns`. Memorize a few shortnames, and your K8s life will get a little easier. Good luck! 
+The second column from the left shows resources that have shortnames, so instead of typing `k get namespaces` you could type `k get ns`, or instead of `k get configmaps` you could type `k get cm`. Memorize a few shortnames, and your K8s life will get a little easier. Good luck! 
 
 
