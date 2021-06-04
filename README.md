@@ -12,7 +12,7 @@
 
 - [ ] ☸ 1  [My First Day](Journey/001/Readme.md)
 - [ ] ☸ 2  [kubectl is HTTP](Journey/002/Readme.md)
-- [ ] ☸ 3 > [](Journey/003/Readme.md)
+- [ ] ☸ 3  [Go Faster with `kubectl`](Journey/003/Readme.md)
 - [ ] ☸ 4 > [](Journey/004/Readme.md)
 - [ ] ☸ 5 > [](Journey/005/Readme.md)
 - [ ] ☸ 6 > [](Journey/006/Readme.md)
