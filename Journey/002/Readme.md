@@ -10,7 +10,7 @@ I learned _so much_ from GoLinuxCloud's article called [Detailed overview on Kub
 ## Prerequisites
 In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser through the [Killer Coda CKAD Scenario](https://killercoda.com/killer-shell-ckad). 
 
-You will need to sign in to Killer Coda (you can use your Github, Gitlab, or Google Account), select the CKAD Certification option, and then choose Playground. Click the START button, and you'll see a command prompt that says `controlplane$`. Run your commands in the terminal for the control plane. 
+You will need to sign in to Killer Coda (you can use your Github, Gitlab, or Google Account), select the CKAD Certification option, and then choose Playground. Click the START button, and you'll see a command prompt that says `controlplane $`. Run your commands in the terminal for the control plane. 
 
 
 ## Seeing the API Endpoints 
