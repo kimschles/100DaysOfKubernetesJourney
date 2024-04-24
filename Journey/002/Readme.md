@@ -8,7 +8,7 @@ What I learned through my research is that the kube-apiserver exposes the Kubern
 I learned _so much_ from GoLinuxCloud's article called [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/). If you want a detailed description of the kube-apiserver and Kubernetes API, I highly recommend it.  
 
 ## Prerequisites
-In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser through the [KillerCoda CKAD Scenario]([https://www.katacoda.com/courses/kubernetes/playground](https://killercoda.com/killer-shell-ckad). 
+In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser through the [Killer Coda CKAD Scenario](https://killercoda.com/killer-shell-ckad). 
 
 You will need to sign in to Killer Coda (you can use your Github, Gitlab, or Google Account), select the CKAD Certification option, and then choose Playground. Click the START button, and you'll see a command prompt that says `controlplane$`. Run your commands in the terminal for the control plane. 
 
