@@ -10,7 +10,7 @@ I learned _so much_ from GoLinuxCloud's article called [Detailed overview on Kub
 ## Prerequisites
 In order to follow along with this article, you will need access to a Kubernetes cluster through `kubectl`. You can explore a Kubernetes cluster from your browser through the [Killer Coda CKAD Scenario](https://killercoda.com/killer-shell-ckad). 
 
-You will need to sign in to Killer Coda (you can use your Github, Gitlab, or Google Account), select the CKAD Certification option, and then choose Playground. Click the START button, and you'll see a command prompt that says `controlplane$`. Run your commands in the terminal for the control plane. 
+You will need to sign in to Killer Coda (you can use your Github, Gitlab, or Google Account), select the CKAD Certification option, and then choose Playground. Click the START button, and you'll see a command prompt that says `controlplane $`. Run your commands in the terminal for the control plane. 
 
 
 ## Seeing the API Endpoints 
@@ -28,74 +28,80 @@ To see the API paths available in your cluster, run the command. `kubectl get --
     "/apis/",
     "/apis/admissionregistration.k8s.io",
     "/apis/admissionregistration.k8s.io/v1",
-    "/apis/admissionregistration.k8s.io/v1beta1",
     "/apis/apiextensions.k8s.io",
     "/apis/apiextensions.k8s.io/v1",
-    "/apis/apiextensions.k8s.io/v1beta1",
     "/apis/apiregistration.k8s.io",
     "/apis/apiregistration.k8s.io/v1",
-    "/apis/apiregistration.k8s.io/v1beta1",
     "/apis/apps",
     "/apis/apps/v1",
     "/apis/authentication.k8s.io",
     "/apis/authentication.k8s.io/v1",
-    "/apis/authentication.k8s.io/v1beta1",
     "/apis/authorization.k8s.io",
     "/apis/authorization.k8s.io/v1",
-    "/apis/authorization.k8s.io/v1beta1",
     "/apis/autoscaling",
     "/apis/autoscaling/v1",
-    "/apis/autoscaling/v2beta1",
-    "/apis/autoscaling/v2beta2",
+    "/apis/autoscaling/v2",
     "/apis/batch",
     "/apis/batch/v1",
-    "/apis/batch/v1beta1",
     "/apis/certificates.k8s.io",
     "/apis/certificates.k8s.io/v1",
-    "/apis/certificates.k8s.io/v1beta1",
     "/apis/coordination.k8s.io",
     "/apis/coordination.k8s.io/v1",
-    "/apis/coordination.k8s.io/v1beta1",
+    "/apis/crd.projectcalico.org",
+    "/apis/crd.projectcalico.org/v1",
     "/apis/discovery.k8s.io",
-    "/apis/discovery.k8s.io/v1beta1"
-  ]
-}
+    "/apis/discovery.k8s.io/v1",
+    "/apis/events.k8s.io"
+    ...
+    [
+{
 ```
 
-The `--raw` flag allows you to look at the response from the Kubernetes API as JSON instead of the formatted tables that we're used to seeing with `kubectl`. 
+The `--raw` flag allows you to look at the response from the Kubernetes API as JSON instead of the formatted tables that you're used to seeing with `kubectl`. 
 
-If you'd like to see the the supported API versions in your cluster, run the command `kubectl api-versions`. Each line shows you the api group, then a forward slash `/`, then the API version. For example: `apps/v1`. With that command, you'll see a longer version of this list: 
+If you'd like to see the the supported API versions in your cluster, run the command `kubectl api-versions`. Each line shows you the api group, then a forward slash `/`, then the API version. For example: `apps/v1`. With that command, you'll see a version of this list: 
 
 ``` 
 admissionregistration.k8s.io/v1
-admissionregistration.k8s.io/v1beta1
 apiextensions.k8s.io/v1
-apiextensions.k8s.io/v1beta1
 apiregistration.k8s.io/v1
-apiregistration.k8s.io/v1beta1
 apps/v1
 authentication.k8s.io/v1
+authorization.k8s.io/v1
+autoscaling/v1
+autoscaling/v2
+batch/v1
+certificates.k8s.io/v1
+coordination.k8s.io/v1
+crd.projectcalico.org/v1
+discovery.k8s.io/v1
+events.k8s.io/v1
+flowcontrol.apiserver.k8s.io/v1
+flowcontrol.apiserver.k8s.io/v1beta3
+networking.k8s.io/v1
+node.k8s.io/v1
+policy/v1
+rbac.authorization.k8s.io/v1
+scheduling.k8s.io/v1
+storage.k8s.io/v1
+v1
 ```
 
 Finally, if you'd prefer to see the Kubernetes resources and their API version organized in columns, run the command `kubectl api-resources`. You will see a longer version of this table: 
 
 ```
-NAME                              SHORTNAMES   APIVERSION                             NAMESPACED   KIND
-bindings                                       v1                                     true         Binding
-componentstatuses                 cs           v1                                     false        ComponentStatus
-configmaps                        cm           v1                                     true         ConfigMap
-endpoints                         ep           v1                                     true         Endpoints
-events                            ev           v1                                     true         Event
-limitranges                       limits       v1                                     true         LimitRange
-namespaces                        ns           v1                                     false        Namespace
-nodes                             no           v1                                     false        Node
-persistentvolumeclaims            pvc          v1                                     true         PersistentVolumeClaim
-persistentvolumes                 pv           v1                                     false        PersistentVolume
-pods                              po           v1                                     true         Pod
-podtemplates                                   v1                                     true         PodTemplate
-replicationcontrollers            rc           v1                                     true         ReplicationController
-resourcequotas                    quota        v1                                     true         ResourceQuota
-secrets                                        v1                                     true         Secret
+NAME                              SHORTNAMES   APIVERSION                        NAMESPACED   KIND
+bindings                                       v1                                true         Binding
+componentstatuses                 cs           v1                                false        ComponentStatus
+configmaps                        cm           v1                                true         ConfigMap
+endpoints                         ep           v1                                true         Endpoints
+events                            ev           v1                                true         Event
+limitranges                       limits       v1                                true         LimitRange
+namespaces                        ns           v1                                false        Namespace
+nodes                             no           v1                                false        Node
+persistentvolumeclaims            pvc          v1                                true         PersistentVolumeClaim
+persistentvolumes                 pv           v1                                false        PersistentVolume
+pods                              po           v1                                true         Pod
 ``` 
 
 ## Translating `kubectl` commands to HTTP Requests
