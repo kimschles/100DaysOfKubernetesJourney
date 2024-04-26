@@ -49,7 +49,6 @@ To see the API paths available in your cluster, run the command. `kubectl get --
     "/apis/discovery.k8s.io",
     "/apis/discovery.k8s.io/v1",
     "/apis/events.k8s.io"
-    ...
     [
 {
 ```
