@@ -130,4 +130,3 @@ Kubernetes can be an intimidating system to start learning, especially if you're
 - [Detailed overview on Kubernetes API Server](https://www.golinuxcloud.com/kube-apiserver/)
 - [K8s Docs: kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
 - [K8s Docs: HTTP Proxy Access](https://kubernetes.io/docs/tasks/extend-kubernetes/http-proxy-access-api/)
-- [Kubernetes v1.21 API Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/)
